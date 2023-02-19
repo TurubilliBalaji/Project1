@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(calculatorBg8.jpg);
+            background-size: 100%;
+            background-position:0px -450px ;
+        }
+        #container{
+            position: relative;
+            width: 40%;
+            height: 70%;
+            background-color: rgba(0,0,0,0.486);
+            border-radius: 2%;
+            box-shadow: 5px 5px 5px black;
+        }
+        #display{
+            width: 75%;
+            height: 30px;
+            position: absolute;
+            top: 5%;
+            left: 9%;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            padding: 5px;
+            outline: none;
+            border: groove 10px rgb(155,155,155);
+            box-shadow: 2px 2px 5px black;
+        }
+        .a{
+            top: 15vh;
+            left: 5vw;
+            margin: 5px;
+            margin-top: 20px;
+            position: relative;
+            width: 15%;
+            height: 6vh;
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px black;
+            border: 2px solid white;
+        }
+        #clear{
+            position: absolute;
+            bottom: 30px;
+            width: 30%;
+            height: 6vh;
+            font-size: 24px;
+            left: 5vw;
+            background-color:greenyellow;
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px black;
+        }
+        #equ{
+            position: absolute;
+            bottom: 30px;
+            width: 40%;
+            height: 6vh;
+            font-size: 24px;
+            left: 18vw;
+            background-color: skyblue;
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <form name="cform">
+        <input name="Ans" id="display">
+        <br>
+        <input type="button" class="a" value="1" onclick="cform.Ans.value +='1'" onmousedown="clicksound()">
+        <input type="button" class="a" value="2" onclick="cform.Ans.value +='2'" onmousedown="clicksound()">
+        <input type="button" class="a" value="3" onclick="cform.Ans.value +='3'" onmousedown="clicksound()">
+        <input type="button" class="a" value="+" onclick="cform.Ans.value +='+'" onmousedown="clicksound()">
+        <br>   
+        <input type="button" class="a" value="4" onclick="cform.Ans.value +='4'" onmousedown="clicksound()">
+        <input type="button" class="a" value="5" onclick="cform.Ans.value +='5'" onmousedown="clicksound()">
+        <input type="button" class="a" value="6" onclick="cform.Ans.value +='6'" onmousedown="clicksound()">
+        <input type="button" class="a" value="-" onclick="cform.Ans.value +='-'" onmousedown="clicksound()">
+        <br>     
+        <input type="button" class="a" value="7" onclick="cform.Ans.value +='7'" onmousedown="clicksound()">
+        <input type="button" class="a" value="8" onclick="cform.Ans.value +='8'" onmousedown="clicksound()">
+        <input type="button" class="a" value="9" onclick="cform.Ans.value +='9'" onmousedown="clicksound()">
+        <input type="button" class="a" value="*" onclick="cform.Ans.value +='*'" onmousedown="clicksound()">
+        <br>     
+        <input type="button" class="a" value="%" onclick="cform.Ans.value +='%'" onmousedown="clicksound()">
+        <input type="button" class="a" value="0" onclick="cform.Ans.value +='0'" onmousedown="clicksound()">
+        <input type="button" class="a" value="." onclick="cform.Ans.value +='.'" onmousedown="clicksound()">
+        <input type="button" class="a" value="/" onclick="cform.Ans.value +='/'" onmousedown="clicksound()">
+        <br>  
+        <input type="button" onmousedown="clicksound()" id="clear" value="=" onclick="cform.Ans.value =eval(cform.Ans.value)">
+        <input type="button" onmousedown="clicksound()" id="equ" value="c" onclick="cform.Ans.value =''">
+    </form>
+    </div>
+    <script>
+        function clicksound()
+        {
+            var click=new Audio()
+            click.src="Clicksound.mp3"
+            click.play()
+        }
+    </script>
+</body>
+</html>
